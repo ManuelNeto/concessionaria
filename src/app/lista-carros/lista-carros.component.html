@@ -1,0 +1,27 @@
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Listagem de Carros</legend>
+
+<ul class="list-group">
+  <li class="list-group-item justify-content-between" *ngFor="let carro of lista_carros">
+    <p>{{carro.marca}}</p>
+    <p>{{carro.modelo}}</p>
+    <p>{{carro.tipo}}</p>
+    <p>{{carro.combustivel}}</p>
+    <p *ngIf="carro.combustivel == 'Gas Natural'">{{carro.registro}}
+    <p>{{carro.preco}}</p>
+  </li>
+</ul>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="cadastra" name="cadastra" class="btn btn-primary" (click)="goToCadastraCarro()">Cadastrar Carros</button>
+  </div>
+</div>
+
+</fieldset>
+</form>

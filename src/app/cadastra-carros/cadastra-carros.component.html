@@ -1,0 +1,91 @@
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Cadastra Carros</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Marca</label>
+  <div class="col-md-4">
+  <input id="marca" name="marca" placeholder="Marca" class="form-control input-md" type="text" [(ngModel)]="carro.marca">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Modelo</label>
+  <div class="col-md-4">
+  <input id="modelo" name="modelo" placeholder="Modelo" class="form-control input-md" type="text" [(ngModel)]="carro.modelo">
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Tipo</label>
+  <div class="col-md-4">
+    <select id="tipo" name="tipo" class="form-control" [(ngModel)]="carro.tipo">
+      <option value="Passeio">Passeio</option>
+      <option value="Conversível">Conversível</option>
+      <option value="Passeio">Pick-up</option>
+      <option value="Conversível">Antigo</option>
+      <option value="Passeio">SUV</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Combustível</label>
+  <div class="col-md-4">
+    <select id="combustivel" name="combustivel" class="form-control" [(ngModel)]="carro.combustivel">
+      <option value="Gasolina">Gasolina</option>
+      <option value="Alcool">Alcool</option>
+      <option value="Flex">Flex</option>
+      <option value="Gas Natural">Gas Natural</option>
+      <option value="Disel">Disel</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group" *ngIf="carro.combustivel == 'Gas Natural'">
+  <label class="col-md-4 control-label" for="textinput">Registro GNV</label>
+  <div class="col-md-4">
+  <input id="modelo" name="modelo" placeholder="Registro GNV" class="form-control input-md" type="text" [(ngModel)]="carro.registro">
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectmultiple">Opcionais</label>
+  <div class="col-md-4">
+    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple" [(ngModel)]="carro.opcionais">
+      <option value="Air bag">Air bag</option>
+      <option value="Alarme">Alarme</option>
+      <option value="Ar condicionado">Ar condicionado</option>
+      <option value="Direção hidráulica">Direção hidráulica</option>
+      <option value="Trava elétrica">Trava elétrica</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Preço</label>
+  <div class="col-md-4">
+  <input id="preco" name="preco" placeholder="placeholder" class="form-control input-md" type="text" [(ngModel)]="carro.preco">
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="salvar" name="salvar" class="btn btn-primary" (click)="cadastraCarro()">Salvar</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
